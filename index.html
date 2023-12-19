@@ -46,7 +46,7 @@
                 <h2> O evento mais aguardado desde 10/03/2020 finalmente está prestes a acontecer, para acalmar os
                     animos dos particpantes deste evento histórico criamos uma contagem regressiva para o evento,
                     acompanhem conosco: </h2>
-                <h1>Faltam <p id="countdown"/> para o evento começar!</h1>
+                <h1><p id="countdown"/></h1>
                 </br>
                 <h2>Mais informações em breve</h2>
             </div>
@@ -90,14 +90,17 @@
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        const message = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "CHEGOU!!!!";
+            document.getElementById("countdown").style.color = "red";
+            document.getElementById("countdown").innerHTML = "Atrasado em " + days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
         }
+
     }, 1000);
 </script>
 
